@@ -1,6 +1,6 @@
 # Full Stack Open - University of Helsinki
 
-This repository serves as a collection of my solutions and exercises for the [Full Stack Open 2024](https://fullstackopen.com/en/) course provided by the University of Helsinki.
+This repository serves as a collection of my solutions and exercises for the [Full Stack Open](https://fullstackopen.com/en/) course provided by the University of Helsinki.
 
 ## Repository Structure
 
