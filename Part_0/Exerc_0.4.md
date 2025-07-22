@@ -1,0 +1,38 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: The user types the note text and clicks 'submit' on the HTML form
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    Note left of server: The server processes the new note and stores it
+
+    server-->>browser: 201 Found
+    deactivate server
+
+    Note right of browser: The browser makes a new GET request for the notes page
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{ "content": .... }, ... ]
+    deactivate server
+
+    Note right of browser: The browser executes the callback function that renders the notes, displaying the new note
